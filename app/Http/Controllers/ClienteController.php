@@ -27,7 +27,7 @@ class ClienteController extends Controller
         $mensagens = [
             'email.unique' => 'Ja existe um usuario com este email',
             'email.email' => 'Digite um email válido',
-            'nome.min' => 'Digite um nome com mais de 3 caracteres',
+            'nome.min' => 'Digite um nome com mais ssde 3 caracteres',
             'nome.max' => 'Digite um nome menos longo',
             'endereco.max' => 'Digite um endereço menor',
             'cep.min' => 'o CEP detes ter 8 numeros',

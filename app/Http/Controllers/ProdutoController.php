@@ -88,7 +88,7 @@ class ProdutoController extends Controller
             return $result;
         }
 
-        return redirect()->route('ver_carrinho')->with('sucesso', 'Carrinho Finalizado!');
+        return redirect()->route('historico')->with('sucesso', 'Carrinho Finalizado!');
     }
 
     public function historico(Request $request)

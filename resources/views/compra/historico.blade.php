@@ -29,7 +29,7 @@
                             <tr class="hover:bg-gray-100 transition-colors">
                                 <td class="py-4 px-5 border-b text-base text-gray-900">{{ $pedido->data }}</td>
                                 <td class="py-4 px-5 border-b text-base text-gray-900">{{ $pedido->status }}</td>
-                                <td class="py-4 px-5 border-b text-base text-gray-900">{{ $pedido->valor }}</td>
+                                <td class="py-4 px-5 border-b text-base text-gray-900">{{ $pedido->total }}</td>
                                 <td class="py-4 px-5 border-b text-base text-gray-900">
                                     <a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">

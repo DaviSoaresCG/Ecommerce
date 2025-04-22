@@ -12,7 +12,7 @@
                 <div class="flex flex-row w-full">
                     <h3 class="text-3xl font-semibold mb-4 mr-auto">Total: R${{ $total }}</h3>
                     @if (!empty($carrinho))
-                        <form action="{{ route('historico') }}" method="post">
+                        <form action="{{ route('finalizar_carrinho') }}" method="post">
                             @csrf
                             <input type="submit" value="Finalizar Compra"
                                 class="px-3 py-2 bg-orange-500 text-white text-lg rounded cursor-pointer">

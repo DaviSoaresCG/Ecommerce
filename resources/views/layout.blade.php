@@ -47,6 +47,7 @@
                 @endif
 
             </ul>
+            
 
             <div class="ml-auto flex flex-row gap-x-10 justify-center items-center">
                 @if (Auth::user())

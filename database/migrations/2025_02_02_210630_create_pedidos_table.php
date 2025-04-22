@@ -15,6 +15,7 @@ return new class extends Migration
             $table->increments('id');
             $table->datetime('data');
             $table->string('status', 4);
+            $table->integer('total');
             $table->unsignedInteger('usuario_id');
 
             $table->foreign('usuario_id')

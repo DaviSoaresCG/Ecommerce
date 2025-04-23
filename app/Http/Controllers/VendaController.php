@@ -35,6 +35,7 @@ class VendaController extends Controller
                     $itens->valor = $produto->valor;
                     $itens->produto_id = $produto->id;
                     $itens->pedido_id = $pedido->id;
+                    $itens->usuario_id = $user->id;
                     $itens->save();
                 }
             });

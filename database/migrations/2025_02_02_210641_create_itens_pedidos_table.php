@@ -18,6 +18,7 @@ return new class extends Migration
 
             $table->unsignedInteger('produto_id');
             $table->unsignedInteger('pedido_id');
+            $table->unsignedInteger('usuario_id');
 
             $table->foreign('pedido_id')
                 ->references('id')
@@ -27,6 +28,11 @@ return new class extends Migration
             $table->foreign('produto_id')
                 ->references('id')
                 ->on('produtos')
+                ->onDelete('cascade');
+
+            $table->foreign('usuario_id')
+                ->references('id')
+                ->on('usuarios')
                 ->onDelete('cascade');
 
             $table->timestamps();

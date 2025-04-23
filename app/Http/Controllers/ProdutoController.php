@@ -7,6 +7,7 @@ use \App\Models\Categoria;
 use \App\Models\Produto;
 use App\Http\Controllers\MensagemController;
 use App\http\controllers\VendaController;
+use App\Models\ItensPedido;
 use App\Models\Pedido;
 use Illuminate\Support\Facades\Auth;
 
@@ -98,13 +99,15 @@ class ProdutoController extends Controller
         $lista_pedido = Pedido::where('usuario_id', $user_id)
             ->orderBy('data', 'desc')
             ->get();
+        $lista_itens_pedido = ItensPedido::where('usuario_id', $user_id)->orderBy('created_at', 'asc')->get();
         $data['lista_pedido'] = $lista_pedido;
+        $data['lista_itens_pedido'] = $lista_itens_pedido;
 
         return view('compra.historico')->with('data', $data);
     }
 
-    public function pagar(Request $request){
+    public function pagar(Request $request)
+    {
         $data = [];
-
     }
 }

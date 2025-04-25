@@ -24,10 +24,7 @@
                     <!-- Corpo da tabela !-->
                     <tbody>
                         <!-- Linha 1 -->
-                        @php
-                            $indice = 0;
-                        @endphp
-                        @foreach ($data['lista_pedido'] as $pedido)
+                        @foreach ($data['lista_pedido'] as $indice => $pedido)
                             <tr class="hover:bg-gray-100 transition-colors">
                                 <td class="py-4 px-5 border-b text-base text-gray-900">{{ $pedido->data }}</td>
                                 <td class="py-4 px-5 border-b text-base text-gray-900">{{ $pedido->status }}</td>
@@ -45,33 +42,28 @@
                                     </div>
                                 </td>
                             </tr>
-                            @php
-                                $indice++;
-                            @endphp
+                            <div id="modal{{ $indice }}"
+                                class="fixed inset-0 flex items-center justify-center bg-black/60 hidden z-50">
+                                <div class="bg-white rounded-lg shadow-xl p-6 w-96 relative">
+                                    <button onclick="toggleModal('modal{{ $indice }}')"
+                                        class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+                                    <h2 class="text-xl font-bold mb-4">Detalhes da Compra</h2>
+                                    @foreach ($data['lista_itens_pedido'] as $item)
+                                        @if ($item->pedido_id == $pedido->id)
+                                            <p>Produto ID:{{ $item->produto_id }}</p>
+                                            <p>Valor do produto{{ $item->valor }}</p>
+                                        @endif
+                                    @endforeach
+                                    <button onclick="toggleModal('modal{{ $indice }}')"
+                                        class="bg-blue-500 text-white px-4 py-2 rounded">
+                                        Fechar
+                                    </button>
+                                </div>
+                            </div>
                         @endforeach
                     </tbody>
                 </table>
             </div>
-            @for ($i = 0; $i < (count($data['lista_itens_pedido'])-1); $i++)
-                <div id="modal{{ $i }}"
-                    class="fixed inset-0 flex items-center justify-center bg-black/60 hidden z-50">
-                    <div class="bg-white rounded-lg shadow-xl p-6 w-96 relative">
-                        <button onclick="toggleModal('modal{{ $i }}')"
-                            class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
-                        <h2 class="text-xl font-bold mb-4">Detalhes da Compra</h2>
-                        @foreach ($data['lista_itens_pedido'] as $item)
-                            @if ($item->pedido_id == $i + 1)
-                                <p>Produto ID:{{ $item->produto_id }}</p>
-                                <p>Valor do produto{{ $item->valor }}</p>
-                            @endif
-                        @endforeach
-                        <button onclick="toggleModal('modal{{ $i }}')"
-                            class="bg-blue-500 text-white px-4 py-2 rounded">
-                            Fechar
-                        </button>
-                    </div>
-                </div>
-            @endfor
         @else
             <div>Nenhum item no carrinho</div>
         @endif

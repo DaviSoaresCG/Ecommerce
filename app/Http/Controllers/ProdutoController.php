@@ -99,7 +99,7 @@ class ProdutoController extends Controller
         $lista_pedido = Pedido::where('usuario_id', $user_id)
             ->orderBy('data', 'desc')
             ->get();
-        $lista_itens_pedido = ItensPedido::where('usuario_id', $user_id)->orderBy('created_at', 'asc')->get();
+        $lista_itens_pedido = ItensPedido::where('usuario_id', $user_id)->orderBy('pedido_id', 'asc')->get();
         $data['lista_pedido'] = $lista_pedido;
         $data['lista_itens_pedido'] = $lista_itens_pedido;
 

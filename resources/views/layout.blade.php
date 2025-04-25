@@ -13,7 +13,7 @@
 <body class="text-black">
     <header class="bg-gray-100 p-7">
         <nav class="flex flex-row space-x-5">
-            <a href="#" class="text-2xl text-orange-500">Myshop</a>
+            <a href="#" class="text-2xl text-orange-500">Davi S.A</a>
             <ul class="flex flex-row flex-wrap space-x-3 items-center justify-center text-sm md:text-base lg:text-lg">
                 <li class="mb-0">
                     <a href="{{ route('home') }}"

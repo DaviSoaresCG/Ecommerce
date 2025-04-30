@@ -16,7 +16,7 @@ class ProdutoController extends Controller
     public function index($mensagem = '')
     {
         $data = [];
-        $listaProduto = \App\Models\Produto::all();
+        $listaProduto = Produto::paginate(3);
         $data['listaProduto'] = $listaProduto;
         $objeto_mensagem = new MensagemController();
         return view('home')
@@ -35,7 +35,7 @@ class ProdutoController extends Controller
             $queryProduto->where('categoria_id', $idcategoria);
         }
 
-        $listaProduto = $queryProduto->get();
+        $listaProduto = $queryProduto->paginate(2);
 
         $data['idcategoria'] = $idcategoria;
         $data['listaProduto'] = $listaProduto;

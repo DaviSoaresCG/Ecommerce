@@ -1,13 +1,13 @@
 @extends('layout')
 @section('conteudo')
-    <div class="w-lg flex flex-col  p-4 mx-auto">
+    <div class="w-76 sm:w-sm md:w-md flex flex-col  p-4 mx-auto ">
         <form action="{{ route('autenticar') }}" method="post">
             @csrf
             <div class="text-center">
                 <h1 class="font-bold text-4xl ">Logar</h1>
             </div>
             <br>
-            <section class="space-y-4 bg-gray-100  rounded-2xl w-full h-full shadow-lg px-8 py-10 mb-10">
+            <section class="space-y-4 bg-gray-100  rounded-2xl w-full h-full shadow-2xl px-8 py-10 mb-10">
                 <div class="flex flex-col">
                     <label for="email" class="ml-1 ">Email</label>
                     <input type="text" name="email" id="email" required value="{{ old('email') }}"

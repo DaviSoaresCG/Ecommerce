@@ -13,6 +13,7 @@
 </head>
 
 <body class="text-black">
+    
     <header class="bg-gray-100 p-7">
         <nav class="flex flex-row justify-between space-x-5">
 
@@ -22,7 +23,7 @@
             </span>
 
             <ul
-                class="flex flex-col sm:flex-row z-[1] sm:z-auto sm:static absolute space-x-3 sm:items-center justify-center text-sm md:text-base lg:text-lg bg-gray-100 sm:left-auto left-0 sm:mt-auto p-4 sm:p-0 w-full sm:w-auto gap-3 sm:pl-0 pl-7 sm:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+                class="flex flex-col sm:flex-row z-[1] sm:z-auto sm:static absolute space-x-3 sm:items-center justify-center text-sm md:text-base lg:text-lg bg-gray-100 sm:left-auto left-0 sm:mt-auto p-4 sm:p-0 w-full sm:w-auto gap-3 sm:pl-0 pl-7 sm:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-300">
                 <li class="mb-0">
                     <a href="{{ route('home') }}"
                         class="hover:text-orange-500 transition-all duration-100 ease-in-out">Home</a>

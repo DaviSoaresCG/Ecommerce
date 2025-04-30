@@ -14,4 +14,9 @@
             </div>
         </section>
     @endforeach
+
+</div>
+<div class="flex flex-col  items-center justify-center">
+    {{ $data->links() }}
+
 </div>

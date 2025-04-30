@@ -1,6 +1,6 @@
 @extends('layout')
 @section('conteudo')
-    <div class="max-w-36 flex flex-row items-center justify-center m-0 ml-10">
+    <div class="max-w-36 flex flex-col items-center justify-center m-0 ml-10">
         @if (isset($data['listaCategoria']))
             <ul class="w-36 rounded bg-gray-200 group  text-lg font-semibold">
                 <li class="">
@@ -16,5 +16,7 @@
             </ul>
         @endif
     </div>
-    @include('_produtos', ['data' => $data['listaProduto']])
+    <div class="flex flex-col items-center justify-center m-auto">
+        @include('_produtos', ['data' => $data['listaProduto']])
+    </div>
 @endsection

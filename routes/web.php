@@ -36,4 +36,4 @@ Route::middleware('auth')->group(function () {
 
 Route::post('/carrinho/finalizar_carrinho', [ProdutoController::class, 'finalizarCarrinho'])->name('finalizar_carrinho');
 
-Route::match(['get', 'post'], '/compras/historico', [ProdutoController::class, 'historico'])->name('historico');
+Route::match(['get', 'post'], '/compras/historico', [ProdutoController::class, 'historico'])->name('historico')->middleware('auth');

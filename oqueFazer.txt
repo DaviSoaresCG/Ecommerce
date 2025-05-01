@@ -6,3 +6,6 @@ Não ficou bonito, mas funciona. Agora é criar uma conta no PagBank
 
 dia 30/04/2025
 Terminei a paginação e o navbar responsivo. Preciso criar o hábito de fazer comentários. Ainda não criei conta no PagSeguro
+
+dia 01/05/2025
+Preciso aplicar reponsividade nas tabelas de minhas compras e carrinho

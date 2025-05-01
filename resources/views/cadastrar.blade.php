@@ -14,7 +14,7 @@
     </script>
 @endsection
 @section('conteudo')
-    <div class="w-lg flex flex-col  p-4 mx-auto">
+    <div class="w-76 sm:w-sm md:w-lg flex flex-col  p-4 mx-auto">
         <form action="{{ route('cadastrar_cliente') }}" method="post">
             @csrf
             <div class="text-center">

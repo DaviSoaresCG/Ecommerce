@@ -1,11 +1,11 @@
 @extends('layout')
 @section('conteudo')
-    <div class="max-w-36 flex flex-col items-center justify-center m-0 ml-10">
+    <div class="w-28 mb-10 md:mb-0 flex flex-col items-center justify-center m-0 md:ml-10">
         @if (isset($data['listaCategoria']))
-            <ul class="w-36 rounded bg-gray-200 group  text-lg font-semibold">
+            <ul class="w-28 sm:w-36 rounded bg-gray-200 group text-sm sm:text-lg font-semibold ">
                 <li class="">
                     <a href="{{ route('categoria') }}"
-                        class=" p-3 text-center w-full  inline-block @if ($data['idcategoria'] == 0) bg-orange-500 rounded text-white @endif">Geral</a>
+                        class=" p-2 md:p-3 text-center w-full  inline-block @if ($data['idcategoria'] == 0) bg-orange-500 rounded text-white @endif">Geral</a>
                 </li>
                 @foreach ($data['listaCategoria'] as $cat)
                     <li class="">

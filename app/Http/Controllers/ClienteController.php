@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Usuario;
 use App\models\Endereco;
 use App\Http\Controllers\ProdutoController;
+use App\Mail\MyTesteEmail;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Mail;
 
 class ClienteController extends Controller
 {
@@ -70,9 +71,10 @@ class ClienteController extends Controller
                 $endereco->save();
             });
 
-            $mensagem = 'Cadastrado com Sucesso';
 
-            // Auth::login($usuario); // Autentica o usuário automaticamente
+            Mail::to($usuario->email)->send(new MyTesteEmail($usuario->nome));
+            $mensagem = 'Cadastrado com Sucesso';
+            Auth::login($usuario); // Autentica o usuário automaticamente
 
             return redirect()->route('home')->with('sucesso', $mensagem);
         } catch (\Exception $e) {
@@ -125,12 +127,14 @@ class ClienteController extends Controller
         }
     }
 
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
         return redirect()->route('home')->with('sucesso', 'Usuário deslogado');
     }
 
-    public function dashborad(){
+    public function dashborad()
+    {
         // 
     }
 }

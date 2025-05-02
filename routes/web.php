@@ -3,8 +3,16 @@
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\VendaController;
+use App\Mail\MyTesteEmail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
+//email
+Route::get('/test', function(){
+    $name = 'Davi Soares';
+
+    Mail::to('davisoaresgigante@gmail.com')->send(new MyTesteEmail($name));
+});
 
 Route::match(['get', 'post'], '/', [ProdutoController::class, 'index'])
     ->name('home');

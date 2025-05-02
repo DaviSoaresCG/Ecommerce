@@ -17,7 +17,7 @@
     <header class="bg-gray-100 p-7">
         <nav class="flex flex-row justify-between space-x-5">
 
-            <a href="#" class="text-2xl text-orange-500">Davi S.A</a>
+            <a href="{{route('home')}}" class="text-2xl text-orange-500">Davi S.A</a>
             <span class="cursor-pointer sm:hidden block m-0 p-0">
                 <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
             </span>

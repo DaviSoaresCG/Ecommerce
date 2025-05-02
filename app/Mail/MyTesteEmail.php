@@ -27,7 +27,7 @@ class MyTesteEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'My Teste Email',
+            subject: 'Davi S.A',
         );
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Usuario;
 use App\models\Endereco;
 use App\Http\Controllers\ProdutoController;
+use App\Jobs\MailJob;
 use App\Mail\MyTesteEmail;
 use Exception;
 use Illuminate\Support\Facades\DB;
@@ -72,7 +73,8 @@ class ClienteController extends Controller
             });
 
 
-            Mail::to($usuario->email)->send(new MyTesteEmail($usuario->nome));
+            // Mail::to($usuario->email)->send(new MyTesteEmail($usuario->nome));
+            MailJob::dispatch($usuario)->onQueue("SendEmail");
             $mensagem = 'Cadastrado com Sucesso';
             Auth::login($usuario); // Autentica o usuário automaticamente
 

@@ -17,7 +17,7 @@ class MailJob implements ShouldQueue
      */
     public function __construct(Private Usuario $user)
     {
-
+        $this->user = $user;
     }
 
     /**
